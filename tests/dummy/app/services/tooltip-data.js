@@ -8,9 +8,11 @@ export default Service.extend({
   hideOn: 'mouseleave blur escapekey',
   interactive: false,
   isShown: false,
+  lazyRender: false,
   placement: 'top',
   renderInPlace: false,
   showDelay: 0,
   showDuration: 300,
-  showOn: 'mouseenter focus'
+  showOn: 'mouseenter focus',
+  useCapture: false
 });

@@ -8,10 +8,11 @@ export default Service.extend({
   hideOn: 'click',
   interactive: false,
   isShown: false,
+  lazyRender: false,
   placement: 'top',
   renderInPlace: false,
   showDelay: 0,
   showDuration: 300,
   showOn: 'click',
-  target: '.target-plz'
+  useCapture: false
 });

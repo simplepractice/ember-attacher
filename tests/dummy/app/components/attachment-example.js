@@ -8,24 +8,40 @@ export default Component.extend({
   popoverData: service(),
   tooltipData: service(),
 
-  animationOptions: [
-    'fade',
-    'fill',
-    'none',
-    'perspective',
-    'scale',
-    'shift'
-  ],
-  hideOnOptions: ['click', 'clickout', 'mouseleave blur escapekey'],
+  init() {
+    this._super(...arguments);
+
+    this.animationOptions = [
+      'fade',
+      'fill',
+      'none',
+      'perspective',
+      'scale',
+      'shift'
+    ];
+    this.hideOnOptions = ['click', 'clickout', 'mouseleave blur escapekey'];
+    this.placementOptions = [
+      'bottom', 'bottom-start', 'bottom-end',
+      'left', 'left-start', 'left-end',
+      'right', 'right-start', 'right-end',
+      'top', 'top-start', 'top-end',
+    ];
+    this.showOnOptions = ['click', 'mouseenter focus'];
+  },
+
   isConfiguringTooltip: true,
-  placementOptions: ['bottom', 'left', 'right', 'top'],
-  showOnOptions: ['click', 'mouseenter focus'],
 
   service: computed('isConfiguringTooltip', function() {
     return this.get('isConfiguringTooltip') ? this.get('tooltipData') : this.get('popoverData');
   }),
 
   actions: {
+    log(api) {
+      /* eslint-disable no-console */
+      console.log('registerAPI called with arg:');
+      console.dir(api);
+    },
+
     toggleArrow() {
       this.get('service').toggleProperty('arrow');
     },
@@ -36,6 +52,10 @@ export default Component.extend({
 
     toggleIsShown() {
       this.get('service').toggleProperty('isShown');
+    },
+
+    toggleLazyRender() {
+      this.get('service').toggleProperty('lazyRender');
     },
 
     toggleRenderInPlace() {

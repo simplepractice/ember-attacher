@@ -1,5 +1,236 @@
 # Change Log
 
+## [v0.14.0](https://github.com/kybishop/ember-attacher/tree/v0.14.0) (2019-05-01)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.13.10...v0.14.0)
+
+**Closed issues:**
+
+- Deprecation warning in Ember 3.9 [\#164](https://github.com/kybishop/ember-attacher/issues/164)
+
+**Merged pull requests:**
+
+- Fix computed-property.override deprecation in Ember 3.9 [\#165](https://github.com/kybishop/ember-attacher/pull/165) ([richard-viney](https://github.com/richard-viney))
+- FEATURE - Add useCapture config option [\#159](https://github.com/kybishop/ember-attacher/pull/159) ([richard-viney](https://github.com/richard-viney))
+
+## [v0.13.10](https://github.com/kybishop/ember-attacher/tree/v0.13.10) (2018-10-12)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.13.9...v0.13.10)
+
+**Closed issues:**
+
+- Error: Could not find module `ember-native-dom-helpers` imported from `ember-attacher/is-visible` [\#140](https://github.com/kybishop/ember-attacher/issues/140)
+
+**Merged pull requests:**
+
+- remove hidden ember-native-dom-helpers dependency [\#154](https://github.com/kybishop/ember-attacher/pull/154) ([kybishop](https://github.com/kybishop))
+- Upgrade to ember 3.4 [\#153](https://github.com/kybishop/ember-attacher/pull/153) ([kybishop](https://github.com/kybishop))
+
+## [v0.13.9](https://github.com/kybishop/ember-attacher/tree/v0.13.9) (2018-10-12)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.13.8...v0.13.9)
+
+**Closed issues:**
+
+- Could not find module `ember-compatibility-helpers` imported from `@ember-decorators/argument/-debug/utils/validation-decorator` [\#151](https://github.com/kybishop/ember-attacher/issues/151)
+- Dependency lint finds multiple version of ember-compatibility-helpers [\#127](https://github.com/kybishop/ember-attacher/issues/127)
+
+**Merged pull requests:**
+
+- bump ember-popper to v0.9.2 [\#152](https://github.com/kybishop/ember-attacher/pull/152) ([kybishop](https://github.com/kybishop))
+- Fix typo [\#150](https://github.com/kybishop/ember-attacher/pull/150) ([ctjhoa](https://github.com/ctjhoa))
+
+## [v0.13.8](https://github.com/kybishop/ember-attacher/tree/v0.13.8) (2018-09-28)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.13.7...v0.13.8)
+
+**Closed issues:**
+
+- Deprecation: Use closure actions instead of `sendAction` [\#148](https://github.com/kybishop/ember-attacher/issues/148)
+- Few files missing 404 errors [\#142](https://github.com/kybishop/ember-attacher/issues/142)
+- Replace ember-cli-sass with postcss [\#108](https://github.com/kybishop/ember-attacher/issues/108)
+
+**Merged pull requests:**
+
+- Use closure actions instead of sendAction [\#149](https://github.com/kybishop/ember-attacher/pull/149) ([scottwernervt](https://github.com/scottwernervt))
+- Update ember-cli-sass [\#147](https://github.com/kybishop/ember-attacher/pull/147) ([jrjohnson](https://github.com/jrjohnson))
+
+## [v0.13.7](https://github.com/kybishop/ember-attacher/tree/v0.13.7) (2018-07-25)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.13.6...v0.13.7)
+
+**Closed issues:**
+
+- Tweak the CSS to work with positions like right-start [\#139](https://github.com/kybishop/ember-attacher/issues/139)
+- Animation support for more Popper.js placements \(right-start, etc.\) [\#134](https://github.com/kybishop/ember-attacher/issues/134)
+- Animation: 'fill' is not compatible with arrow: true [\#126](https://github.com/kybishop/ember-attacher/issues/126)
+- Tooltip background color is transparent for long text. [\#101](https://github.com/kybishop/ember-attacher/issues/101)
+
+**Merged pull requests:**
+
+- fix\(warning on arrow/fill incompat\) [\#144](https://github.com/kybishop/ember-attacher/pull/144) ([kybishop](https://github.com/kybishop))
+- feat: works with placement modifiers \(start/end\) [\#143](https://github.com/kybishop/ember-attacher/pull/143) ([urbany](https://github.com/urbany))
+
+## [v0.13.6](https://github.com/kybishop/ember-attacher/tree/v0.13.6) (2018-05-25)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.13.5...v0.13.6)
+
+**Closed issues:**
+
+- lazyLoad + showDelay causes error  [\#137](https://github.com/kybishop/ember-attacher/issues/137)
+- Apply Dynamic Styles [\#135](https://github.com/kybishop/ember-attacher/issues/135)
+
+**Merged pull requests:**
+
+- fix\(race conditions with lazyRender and showDelay\) [\#138](https://github.com/kybishop/ember-attacher/pull/138) ([kybishop](https://github.com/kybishop))
+- Pass in style attribute to style attachment [\#136](https://github.com/kybishop/ember-attacher/pull/136) ([jrjohnson](https://github.com/jrjohnson))
+
+## [v0.13.5](https://github.com/kybishop/ember-attacher/tree/v0.13.5) (2018-04-27)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.13.4...v0.13.5)
+
+**Merged pull requests:**
+
+- chore\(remove package-lock.json\) [\#132](https://github.com/kybishop/ember-attacher/pull/132) ([kybishop](https://github.com/kybishop))
+
+## [v0.13.4](https://github.com/kybishop/ember-attacher/tree/v0.13.4) (2018-04-27)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.13.3...v0.13.4)
+
+**Closed issues:**
+
+- addon.sass file not found [\#130](https://github.com/kybishop/ember-attacher/issues/130)
+
+**Merged pull requests:**
+
+- Enable sass [\#131](https://github.com/kybishop/ember-attacher/pull/131) ([lamabiker](https://github.com/lamabiker))
+- fix\(user-supplied animation default can now prevent arrow warning\) [\#129](https://github.com/kybishop/ember-attacher/pull/129) ([kybishop](https://github.com/kybishop))
+- Improve README [\#128](https://github.com/kybishop/ember-attacher/pull/128) ([mostafa-sakhiri](https://github.com/mostafa-sakhiri))
+
+## [v0.13.3](https://github.com/kybishop/ember-attacher/tree/v0.13.3) (2018-04-03)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.13.2...v0.13.3)
+
+**Closed issues:**
+
+- TypeError: Cannot set property arrow of \[object Object\] which has only a getter [\#123](https://github.com/kybishop/ember-attacher/issues/123)
+- Unnecessary `babel-eslint` dependency? [\#122](https://github.com/kybishop/ember-attacher/issues/122)
+- Using with overlays? [\#120](https://github.com/kybishop/ember-attacher/issues/120)
+
+**Merged pull requests:**
+
+- fix\(user-supplied default for "arrow"\) [\#124](https://github.com/kybishop/ember-attacher/pull/124) ([kybishop](https://github.com/kybishop))
+- chore\(bump deps\) ember 3.0 [\#119](https://github.com/kybishop/ember-attacher/pull/119) ([kybishop](https://github.com/kybishop))
+
+## [v0.13.2](https://github.com/kybishop/ember-attacher/tree/v0.13.2) (2018-03-20)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.13.1...v0.13.2)
+
+**Closed issues:**
+
+- TypeError: setting getter-only property "eventsEnabled" [\#117](https://github.com/kybishop/ember-attacher/issues/117)
+- setting `arrow: true` in config/environment.js throws error [\#114](https://github.com/kybishop/ember-attacher/issues/114)
+- "Uncaught Error: Could not find module `@ember/component`" when upgrading from 0.11.4 to 0.13.1 [\#112](https://github.com/kybishop/ember-attacher/issues/112)
+- Warning when setting 'modifiers' in app defaults \(environment.js\) [\#111](https://github.com/kybishop/ember-attacher/issues/111)
+- Option to add an offset/padding [\#107](https://github.com/kybishop/ember-attacher/issues/107)
+- Far too slow on initial render of pages with \> 100 tooltips [\#100](https://github.com/kybishop/ember-attacher/issues/100)
+- Add GitHub "Star" button to example website [\#92](https://github.com/kybishop/ember-attacher/issues/92)
+- Expose `registerAPI` [\#86](https://github.com/kybishop/ember-attacher/issues/86)
+
+**Merged pull requests:**
+
+- Expose register api [\#118](https://github.com/kybishop/ember-attacher/pull/118) ([kybishop](https://github.com/kybishop))
+- chore\(improve example app\) [\#116](https://github.com/kybishop/ember-attacher/pull/116) ([kybishop](https://github.com/kybishop))
+- feat: get hideOn clickout to work on iOS [\#115](https://github.com/kybishop/ember-attacher/pull/115) ([necojackarc](https://github.com/necojackarc))
+- add modifiers to DEFAULTS [\#113](https://github.com/kybishop/ember-attacher/pull/113) ([enkol](https://github.com/enkol))
+- feat\(true lazy rendering\) [\#102](https://github.com/kybishop/ember-attacher/pull/102) ([kybishop](https://github.com/kybishop))
+
+## [v0.13.1](https://github.com/kybishop/ember-attacher/tree/v0.13.1) (2018-02-13)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.13.0...v0.13.1)
+
+**Closed issues:**
+
+- Block-scoped declarations \(let, const, function, class\) not yet supported outside strict mode [\#106](https://github.com/kybishop/ember-attacher/issues/106)
+- Warning in ember-cli console [\#105](https://github.com/kybishop/ember-attacher/issues/105)
+
+**Merged pull requests:**
+
+- chore\(bump deps\) ember 2.18, etc. [\#110](https://github.com/kybishop/ember-attacher/pull/110) ([kybishop](https://github.com/kybishop))
+- Fix missing back tick [\#104](https://github.com/kybishop/ember-attacher/pull/104) ([ctjhoa](https://github.com/ctjhoa))
+- Fix credit link [\#103](https://github.com/kybishop/ember-attacher/pull/103) ([ctjhoa](https://github.com/ctjhoa))
+
+## [v0.13.0](https://github.com/kybishop/ember-attacher/tree/v0.13.0) (2017-12-04)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.12.2...v0.13.0)
+
+**Closed issues:**
+
+- Jank when using isShown=true with animation="fill" [\#99](https://github.com/kybishop/ember-attacher/issues/99)
+- Popper briefly flickers in top left on initial show if no animation is used [\#95](https://github.com/kybishop/ember-attacher/issues/95)
+- Attacher-Component breaks ember-metrics [\#93](https://github.com/kybishop/ember-attacher/issues/93)
+
+**Merged pull requests:**
+
+- chore\(bump deps\) ember 2.17, etc. [\#98](https://github.com/kybishop/ember-attacher/pull/98) ([kybishop](https://github.com/kybishop))
+- fix\(initial positioning flicker when not using animations\) [\#97](https://github.com/kybishop/ember-attacher/pull/97) ([kybishop](https://github.com/kybishop))
+- BREAKING\(update popper dep\) target arg is now popperTarget [\#96](https://github.com/kybishop/ember-attacher/pull/96) ([kybishop](https://github.com/kybishop))
+
+## [v0.12.2](https://github.com/kybishop/ember-attacher/tree/v0.12.2) (2017-11-28)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.12.1...v0.12.2)
+
+**Closed issues:**
+
+- Causes my builds to fail? [\#87](https://github.com/kybishop/ember-attacher/issues/87)
+- hideOn and showOn broken when undefined [\#76](https://github.com/kybishop/ember-attacher/issues/76)
+
+**Merged pull requests:**
+
+- fix\(initial positioning\) larger attachments stay in window more reliably [\#91](https://github.com/kybishop/ember-attacher/pull/91) ([kybishop](https://github.com/kybishop))
+- fix\(hideOn/showOn set to '' should set them to null\) [\#89](https://github.com/kybishop/ember-attacher/pull/89) ([kybishop](https://github.com/kybishop))
+- feat\(use defaults for hideOn/showOn when passed undefined\) [\#88](https://github.com/kybishop/ember-attacher/pull/88) ([kybishop](https://github.com/kybishop))
+
+## [v0.12.1](https://github.com/kybishop/ember-attacher/tree/v0.12.1) (2017-11-04)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.12.0...v0.12.1)
+
+**Closed issues:**
+
+- Dev-mode currently borked for v0.12.0 [\#84](https://github.com/kybishop/ember-attacher/issues/84)
+
+**Merged pull requests:**
+
+- chore\(bump deps\) ember-popper for bugfix [\#85](https://github.com/kybishop/ember-attacher/pull/85) ([kybishop](https://github.com/kybishop))
+
+## [v0.12.0](https://github.com/kybishop/ember-attacher/tree/v0.12.0) (2017-11-03)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.11.4...v0.12.0)
+
+**Closed issues:**
+
+- Testing [\#40](https://github.com/kybishop/ember-attacher/issues/40)
+
+**Merged pull requests:**
+
+- Update readme [\#83](https://github.com/kybishop/ember-attacher/pull/83) ([kybishop](https://github.com/kybishop))
+- fix\(css\) better tooltip widths [\#82](https://github.com/kybishop/ember-attacher/pull/82) ([kybishop](https://github.com/kybishop))
+- BREAKING\(get rid of inner component\) [\#81](https://github.com/kybishop/ember-attacher/pull/81) ([kybishop](https://github.com/kybishop))
+- Set aria-hidden when showing/hiding [\#80](https://github.com/kybishop/ember-attacher/pull/80) ([rwwagner90](https://github.com/rwwagner90))
+- chore\(upgrade deps\) ember 2.16, etc. [\#79](https://github.com/kybishop/ember-attacher/pull/79) ([kybishop](https://github.com/kybishop))
+- Move mixins to separate file, reduce redundant styles [\#78](https://github.com/kybishop/ember-attacher/pull/78) ([rwwagner90](https://github.com/rwwagner90))
+
+## [v0.11.4](https://github.com/kybishop/ember-attacher/tree/v0.11.4) (2017-10-18)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.11.3...v0.11.4)
+
+**Closed issues:**
+
+- Feature Request - Lazy Render [\#74](https://github.com/kybishop/ember-attacher/issues/74)
+
+**Merged pull requests:**
+
+- Support innerClass option [\#77](https://github.com/kybishop/ember-attacher/pull/77) ([rwwagner90](https://github.com/rwwagner90))
+- Adds lazyRender support [\#75](https://github.com/kybishop/ember-attacher/pull/75) ([Duder-onomy](https://github.com/Duder-onomy))
+
+## [v0.11.3](https://github.com/kybishop/ember-attacher/tree/v0.11.3) (2017-09-22)
+[Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.11.2...v0.11.3)
+
+**Closed issues:**
+
+- Cannot find module package.json [\#72](https://github.com/kybishop/ember-attacher/issues/72)
+- Syntax error in IE 11 on development build [\#71](https://github.com/kybishop/ember-attacher/issues/71)
+
+**Merged pull requests:**
+
+- fix\(filters\) downgrade babel-plugin-filter-imports [\#73](https://github.com/kybishop/ember-attacher/pull/73) ([kybishop](https://github.com/kybishop))
+- feat\(isVisible test helper\) [\#70](https://github.com/kybishop/ember-attacher/pull/70) ([kybishop](https://github.com/kybishop))
+- chore\(showOn tests\) focus and mouseenter [\#69](https://github.com/kybishop/ember-attacher/pull/69) ([kybishop](https://github.com/kybishop))
+
 ## [v0.11.2](https://github.com/kybishop/ember-attacher/tree/v0.11.2) (2017-09-20)
 [Full Changelog](https://github.com/kybishop/ember-attacher/compare/v0.11.1...v0.11.2)
 

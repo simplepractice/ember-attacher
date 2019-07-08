@@ -1,95 +1,143 @@
 import hbs from 'htmlbars-inline-precompile';
-import { click, find } from 'ember-native-dom-helpers';
+import {
+  click,
+  find,
+  triggerEvent,
+  waitUntil
+} from 'ember-native-dom-helpers';
 import { isVisible } from 'ember-attacher';
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
 
-moduleForComponent('ember-attacher', 'Integration | Component | hideOn "clickout"', {
-  integration: true
-});
+import { render } from '@ember/test-helpers';
 
-test('hides when an element outside the target is clicked', async function(assert) {
-  assert.expect(3);
+module('Integration | Component | hideOn "clickout"', function(hooks) {
+  setupRenderingTest(hooks);
 
-  this.render(hbs`
-    <input type="text" id="focus-me"/>
+  test('hides when an element outside the target is clicked', async function(assert) {
+    assert.expect(3);
 
-    <div id="parent">
-      {{#ember-attacher id='attachment'
-                        hideOn='clickout'
-                        isShown=true}}
-        hideOn click
-      {{/ember-attacher}}
-    </div>
-  `);
+    await render(hbs`
+      <input type="text" id="focus-me"/>
 
-  const attachment = find('#attachment');
+      <div id="parent">
+        {{#attach-popover id='attachment'
+                          hideOn='clickout'
+                          isShown=true}}
+          hideOn click
+        {{/attach-popover}}
+      </div>
+    `);
 
-  assert.equal(isVisible(attachment), true, 'Initially shown');
+    const attachment = find('#attachment');
 
-  // Make sure the attachment is still shown when the target is clicked
-  await click('#parent');
+    assert.equal(isVisible(attachment), true, 'Initially shown');
 
-  assert.equal(isVisible(attachment), true, 'Still shown');
+    // Make sure the attachment is still shown when the target is clicked
+    await click('#parent');
 
-  await click('#focus-me');
+    assert.equal(isVisible(attachment), true, 'Still shown');
 
-  assert.equal(isVisible(attachment), false, 'Now hidden');
-});
+    await click('#focus-me');
 
-test('with interactive=false: hides when attachment is clicked', async function(assert) {
-  assert.expect(2);
+    await waitUntil(() => isVisible(attachment) === false);
 
-  this.render(hbs`
-    <div id="parent">
-      {{#ember-attacher id='attachment'
-                        hideOn='clickout'
-                        isShown=true}}
-        hideOn click
-      {{/ember-attacher}}
-    </div>
-  `);
+    assert.equal(isVisible(attachment), false, 'Now hidden');
+  });
 
-  const attachment = find('#attachment');
+  test('with interactive=false: hides when attachment is clicked', async function(assert) {
+    assert.expect(2);
 
-  assert.equal(isVisible(attachment), true, 'Initially shown');
+    await render(hbs`
+      <div id="parent">
+        {{#attach-popover id='attachment'
+                          hideOn='clickout'
+                          isShown=true}}
+          hideOn click
+        {{/attach-popover}}
+      </div>
+    `);
 
-  await click(attachment);
+    const attachment = find('#attachment');
 
-  assert.equal(isVisible(attachment), false, 'Now hidden');
-});
+    assert.equal(isVisible(attachment), true, 'Initially shown');
 
-test("with interactive=true: doesn't hide when attachment is clicked", async function(assert) {
-  assert.expect(4);
+    await click(attachment);
 
-  this.render(hbs`
-    <input type="text" id="focus-me"/>
+    assert.equal(isVisible(attachment), false, 'Now hidden');
+  });
 
-    <div id="parent">
-      {{#ember-attacher id='attachment'
-                        hideOn='clickout'
-                        interactive=true
-                        isShown=true}}
-        hideOn click
-      {{/ember-attacher}}
-    </div>
-  `);
+  test("with interactive=true: doesn't hide when attachment is clicked", async function(assert) {
+    assert.expect(4);
 
-  const attachment = find('#attachment');
+    await render(hbs`
+      <input type="text" id="focus-me"/>
 
-  assert.equal(isVisible(attachment), true, 'Initially shown');
+      <div id="parent">
+        {{#attach-popover id='attachment'
+                          hideOn='clickout'
+                          interactive=true
+                          isShown=true}}
+          hideOn click
+        {{/attach-popover}}
+      </div>
+    `);
 
-  // Make sure attachment stays shown when attachment clicked
-  await click(attachment);
+    const attachment = find('#attachment');
 
-  assert.equal(isVisible(attachment), true, 'Still shown');
+    assert.equal(isVisible(attachment), true, 'Initially shown');
 
-  // Make sure attachment stays shown when target clicked
-  await click('#parent');
+    // Make sure attachment stays shown when attachment clicked
+    await click(attachment);
 
-  assert.equal(isVisible(attachment), true, 'Still shown');
+    assert.equal(isVisible(attachment), true, 'Still shown');
 
-  // Make sure attachment is hidden once an element outside target or attachment is clicked
-  await click('#focus-me');
+    // Make sure attachment stays shown when target clicked
+    await click('#parent');
 
-  assert.equal(isVisible(attachment), false, 'Now hidden');
+    assert.equal(isVisible(attachment), true, 'Still shown');
+
+    // Make sure attachment is hidden once an element outside target or attachment is clicked
+    await click('#focus-me');
+
+    await waitUntil(() => isVisible(attachment) === false);
+
+    assert.equal(isVisible(attachment), false, 'Now hidden');
+  });
+
+  test('hides when an element outside the target is touched on touch devices', async function(assert) {
+    // using `ontouchstart` internally to identify if the current device is touchable
+    window.ontouchstart = () => {};
+
+    assert.expect(3);
+
+    await render(hbs`
+      <input type="text" id="focus-me"/>
+
+      <div id="parent">
+        {{#attach-popover id='attachment'
+                          hideOn='clickout'
+                          isShown=true}}
+          hideOn click
+        {{/attach-popover}}
+      </div>
+    `);
+
+    const attachment = find('#attachment');
+
+    assert.equal(isVisible(attachment), true, 'Initially shown');
+
+    // Make sure the attachment is still shown when the target is tapped
+    await triggerEvent('#parent', 'touchend');
+
+    assert.equal(isVisible(attachment), true, 'Still shown');
+
+    await triggerEvent('#focus-me', 'touchend');
+
+    await waitUntil(() => isVisible(attachment) === false);
+
+    assert.equal(isVisible(attachment), false, 'Now hidden');
+
+    delete window.ontouchstart;
+  });
 });

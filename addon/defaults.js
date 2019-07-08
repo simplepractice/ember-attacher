@@ -9,6 +9,8 @@ export default {
   interactive: false,
   isOffset: false,
   isShown: false,
+  lazyRender: false,
+  modifiers: null,
   placement: 'top',
   popperContainer: '.ember-application',
   popperOptions: null,
@@ -16,5 +18,7 @@ export default {
   showDelay: 0,
   showDuration: 300,
   showOn: 'mouseenter focus',
-  tooltipClass: 'ember-attacher-popper ember-attacher-tooltip'
+  style: null,
+  tooltipClass: 'ember-attacher-popper ember-attacher-tooltip',
+  useCapture: false
 };

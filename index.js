@@ -3,11 +3,10 @@
 
 const FilterImports = require('babel-plugin-filter-imports');
 const Funnel = require('broccoli-funnel');
-const RemoveImports = require('./lib/babel-plugin-remove-imports');
 const StripClassCallCheck = require('babel6-plugin-strip-class-callcheck');
 
 module.exports = {
-  name: 'ember-attacher',
+  name: require('./package').name,
 
   included(app) {
     this._super.included.apply(this, arguments);
@@ -33,15 +32,16 @@ module.exports = {
       babelOptions.postTransformPlugins = babelOptions.postTransformPlugins || [];
 
       const strippedImports = {
-        'ember-attacher/-debug/helpers': [
-          'assert',
-          'debug',
-          'debugOnError',
-          'stripInProduction'
-        ]
+        'imports': {
+          'ember-attacher/-debug/helpers': [
+            'assert',
+            'debug',
+            'debugOnError',
+            'stripInProduction'
+          ]
+        }
       };
       babelOptions.plugins.push([FilterImports, strippedImports]);
-      babelOptions.plugins.push([RemoveImports, 'ember-attacher/-debug/helpers']);
       babelOptions.postTransformPlugins.push(StripClassCallCheck);
     }
 

@@ -1,30 +1,28 @@
 import hbs from 'htmlbars-inline-precompile';
 import { find } from 'ember-native-dom-helpers';
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
 
-moduleForComponent('ember-attacher', 'Integration | Component | ember attacher', {
-  integration: true
-});
+import { render } from '@ember/test-helpers';
 
-test('it renders', function(assert) {
-  assert.expect(3);
+module('Integration | Component | ember attacher', function(hooks) {
+  setupRenderingTest(hooks);
 
-  this.render(hbs`
-    <div>
-      {{#ember-attacher id='attachment'}}
-        popper text
-      {{/ember-attacher}}
-    </div>
-  `);
+  test('it renders', async function(assert) {
+    assert.expect(2);
 
-  const attachment = find('#attachment');
-  const innerAttacher = find('.inner', attachment);
+    await render(hbs`
+      <div>
+        {{#attach-popover id='attachment'}}
+          popper text
+        {{/attach-popover}}
+      </div>
+    `);
 
-  assert.ok(innerAttacher, '.inner class exists');
+    const attachment = find('#attachment');
 
-  assert.ok(find('div[x-circle]', innerAttacher), 'div[x-circle] exists');
+    assert.dom('div[x-circle]', attachment).exists('div[x-circle] exists');
 
-  const innerHTML = innerAttacher.innerHTML.trim();
-
-  assert.equal(innerHTML.indexOf('popper text'), 0);
+    assert.ok(attachment.innerHTML.indexOf('popper text') !== -1);
+  });
 });
